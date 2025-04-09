@@ -50,8 +50,8 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  return 2*pi*yaricap;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,8 +64,8 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap) {
+  return pi*Math.pow(yaricap,2)
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -98,28 +98,54 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
+enkucuk = sayilar[0];
+for(let i = 1; i<sayilar.length; i++){
+  if(enkucuk>sayilar[i]){
+    enkucuk = sayilar[i]
+  }
+};
+enbuyuk = sayilar[0];
+for(let j = 1; j<sayilar.length; j++){
+  if(enbuyuk<sayilar[j]){
+    enbuyuk = sayilar[j]
+  }
+};
 
-/* kodlar buraya */
+
 
 // 3b çözümü:
+ucetambolunenler = [];
+sayilar.forEach((sayi) => {if(sayi%3 === 0){ucetambolunenler.push(sayi)}});
 
-/* kodlar buraya */
 
 // 3c çözümü:
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc, yeni) => acc+yeni, 0);
 
-/* kodlar buraya */
 
 // 3d çözümü
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi<500);
 
-/* kodlar buraya */
+
 
 // 3e çözümü
+siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a - b);
 
-/* kodlar buraya */
 
 // 3f çözümü
+tekraredensayilar = {};
+let tekrar = {};
+for (let i = 0; i < sayilar.length; i++) {
+  if (tekrar.hasOwnProperty(sayilar[i])) {
+      tekrar[sayilar[i]] += 1;
+     
+  } else {
+      tekrar[sayilar[i]] = 1;
+  }
+}
+Object.keys(tekrar).forEach((key) => {
+  tekraredensayilar[key] = `${key} sayısı ${tekrar[key]} kere tekrar edilmiştir`;
+});
 
-/* kodlar buraya */
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
